@@ -1,0 +1,19 @@
+/* Buttons
+================================================== */
+
+$button-height: $padding;
+$button-bg-color: $color-bg;
+
+.button {
+  display: inline-block;
+  height: $button-height;
+  line-height: $button-height;
+  background: $button-bg-color;
+  font: {
+    weight: 100;
+  }
+  padding: 0 ($button-height / 2);
+  color: $color-text;
+  text-decoration: none;
+  @include border-radius(2px);
+}
