@@ -12,9 +12,14 @@
 
   %body
     %header.toolbar
-      .app-title Boarder
+      = link_to '<span class="app-title-kerning-b">B</span>oarder', '/', class: 'app-title'
       .app-actions.actions
-        = link_to 'Add item', '#', class: 'button button-add'
+        = link_to 'Upload Board', '#', class: 'button button-upload action-button icon-upload', id: 'upload-button'
+        = link_to 'Save Board', '#', class: 'button button-save action-button icon-save', id: 'save-button'
+        = link_to 'Add item', '#', class: 'button button-add action-button icon-plus', id: 'add-button'
+        %input#file-upload{type: "file"}
 
     #main.app-main= yield
     = render_partial 'footer'
+    = render_partial 'dialogs'
+

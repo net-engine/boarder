@@ -1,0 +1,53 @@
+
+.dialog {
+  position: absolute;
+  padding: .5em;
+  background: rgba(white, .85);
+  border-radius: 2px;
+  width: 25%;
+  min-width: 250px;
+  z-index: 100;
+
+  textarea {
+    background: rgba(white, .75);
+    border: 1px solid rgba(black, .25);
+    border-radius: 2px;
+    padding: .5em;
+    font-family: menlo;
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .save-button { font-weight: 700; }
+}
+
+#save-dialog {
+  top: 3.5em;
+  right: 3.5em;
+}
+
+#upload-dialog {
+  top: 3.5em;
+  right: 5.5em;
+}
+
+#resize-dialog {
+  top: 2.5em;
+  left: .25em;
+  right: .25em;
+  min-width: 0;
+  width: auto;
+
+  input, .save-button {
+    float: left;
+    width: 30%;
+    font-size: .75em;
+    text-align: center;
+    font-family: $font-family;
+  }
+
+  input {
+    height: 2em;
+    margin-right: 5%;
+  }
+}

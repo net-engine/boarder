@@ -17,3 +17,24 @@ $button-bg-color: $color-bg;
   text-decoration: none;
   @include border-radius(2px);
 }
+
+
+.action-button {
+  position: relative;
+  width: $button-height;
+  text-indent: -9999px;
+  background: transparent;
+  margin-left: .5em;
+
+  &:before {
+    position: absolute;
+    margin: -.5em;
+    font-size: 38px;
+    top: 50%; left: 50%;
+    height: 1em; width: 1em;
+    line-height: 1em;
+    text-indent: 0;
+    text-align: center;
+    color: inherit;
+  }
+}

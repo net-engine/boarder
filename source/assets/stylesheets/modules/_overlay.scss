@@ -1,0 +1,44 @@
+
+.overlay {
+  background: rgba(255,255,255,.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  @include transition(opacity .3s linear);
+  @extend .visible;
+
+  &.loading {
+    background: rgba(red, .5);
+  }
+}
+
+.helper-overlay {
+  background: transparent;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+$spinner-size: 72px;
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: $spinner-size;
+  width: $spinner-size;
+  margin: -#{$spinner-size / 2};
+}
+
+.loading .overlay, .uploading .overlay {
+  @extend .visible;
+
+  .spinner { display: block; }
+}
