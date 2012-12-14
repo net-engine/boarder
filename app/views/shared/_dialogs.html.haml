@@ -5,5 +5,8 @@
   %textarea#load-box
   = link_to 'Save', '#', class: 'button save-button', id: "upload-save-button"
 
+#color-dialog.dialog.hidden
+  %input#color-input{type: 'color'}
+
 #main-overlay.overlay.hidden
   = image_tag 'spinner.gif', class: 'spinner'

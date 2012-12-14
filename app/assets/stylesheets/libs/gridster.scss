@@ -62,3 +62,24 @@
 /*.gridster .player {
 opacity:0;
 }*/
+
+
+.ui-icon-gripsmall-diagonal-se {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 20px;
+  width: 20px;
+  @extend .icon-resizable;
+
+  &:before {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 32px; height: 32px;
+    margin: -16px;
+    line-height: 1;
+    font-size: 32px;
+    font-family: 'icomoon';
+    text-align: center;
+  }
+}

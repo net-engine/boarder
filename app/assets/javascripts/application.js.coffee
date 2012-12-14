@@ -10,6 +10,10 @@
 settings = 'layout'
 gridsterContainer = $('.gridster ul')
 
+initResizable = ->
+  $('.gridster li').resizable
+    grid: ($('.gridster').width() / 6) - 20
+
 refresh = ->
   setTimeout (->
     $('.gridster').remove()
@@ -17,7 +21,7 @@ refresh = ->
     loadGrid()
   ), 100
 
-saveSettings = ->
+@saveSettings = ->
   blocks = []
   items = $('.gridster ul').find('li')
   count = items.length
@@ -63,6 +67,7 @@ saveSettings = ->
           # This is currently broken due to cross origin issues when serving the images from imgur
   else
     $('#main').addClass('empty')
+    initGridster()
 
 
 @initGridster = ->
@@ -81,6 +86,7 @@ saveSettings = ->
         ), 500
 
   ).data("gridster")
+  # initResizable()
 
 upload = (file) ->
   APIKey = "4a49972bdbbcb16572a430007f806211"
@@ -108,7 +114,9 @@ upload = (file) ->
 
     $('body').attr('class', 'uploaded')
 
-    updateColor averageColours(getColors())
+    saveSettings()
+
+    # updateColor averageColours(getColors())
 
   xhr.send fd
 
@@ -136,6 +144,9 @@ $ ->
     $("#save-dialog textarea").val localStorage.getItem(settings)
     $("#save-dialog").toggleClass('hidden')
     $("#upload-dialog").addClass('hidden')
+
+  $(document).on 'click', '#display-button', (e) ->
+    $('body').toggleClass 'display'
 
   $(document).on "click", "#upload-button", (e) ->
     e.preventDefault()
