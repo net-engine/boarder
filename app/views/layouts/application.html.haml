@@ -8,11 +8,11 @@
     %meta{content: 'width=device-width', 'name' => 'viewport'}
     = stylesheet_link_tag :application
     = javascript_include_tag :application
-    = favicon_tag 'favicon.ico'
+    %link{rel: "shortcut icon", href: "/favicon.ico"}
 
   %body
     %header.toolbar
-      = link_to '<span class="app-title-kerning-b">B</span>oarder', '/', class: 'app-title'
+      = link_to '<span class="app-title-kerning-b">B</span>oarder'.html_safe, '/', class: 'app-title'
       .boards-list#boards
 
       .app-actions.actions
@@ -23,6 +23,6 @@
         %input#file-upload{type: "file"}
 
     #main.app-main= yield
-    = render_partial 'footer'
-    = render_partial 'dialogs'
+    = render 'shared/footer'
+    = render 'shared/dialogs'
 
