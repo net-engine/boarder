@@ -1,5 +1,6 @@
 #= require libs/jquery.min
 #= require libs/jquery.gridster.min
+#= require libs/jquery-ui.min
 #= require libs/quantize
 #= require libs/color-thief
 
@@ -9,9 +10,11 @@
 settings = 'layout'
 gridsterContainer = $('.gridster ul')
 
-refreshPage = ->
+refresh = ->
   setTimeout (->
-    window.location.replace(window.location.href)
+    $('.gridster').remove()
+    $('#main').append('<div class="gridster"><ul></ul></div>')
+    loadGrid()
   ), 100
 
 saveSettings = ->
@@ -35,11 +38,11 @@ saveSettings = ->
         localStorage.setItem(settings, JSON.stringify(blocks))
         $('#resize-dialog').remove()
 
-        refreshPage() # THIS NEEDS TO BE FIXED!
+        refresh()
   else
-    refreshPage() # THIS NEEDS TO BE FIXED!
+    refresh()
 
-loadGrid = ->
+@loadGrid = ->
   if localStorage.getItem(settings)
     blocks = JSON.parse localStorage.getItem(settings)
     count = blocks.length
@@ -105,15 +108,18 @@ upload = (file) ->
 
     $('body').attr('class', 'uploaded')
 
-    $('img').load ->
-      $('body').removeClass()
-      saveSettings()
-      # updateColor averageColours(getColors())
+    updateColor averageColours(getColors())
 
   xhr.send fd
 
 $ ->
   loadGrid()
+
+  $(window).resize ->
+    refresh()
+
+  $(document).on "change", 'input[type="color"]', (e) ->
+    updateColor hex2rgb $(this).val()
 
   window.ondrop = (e) ->
     e.preventDefault()
@@ -151,6 +157,8 @@ $ ->
     gridster.remove_widget
     gridster.remove_widget $(this).closest("li"), ->
       saveSettings()
+
+    # updateColor(averageColours(getColors()))
 
   $(document).on 'click', '.gridster .resize', (e) ->
     li = $(this).closest('li')

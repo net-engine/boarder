@@ -36,6 +36,19 @@
     i++
   maxEl
 
+@hex2rgb = (hex) ->
+  hex = hex.substr(1)  if hex[0] is "#"
+  if hex.length is 3
+    temp = hex
+    hex = ""
+    temp = /^([a-f0-9])([a-f0-9])([a-f0-9])$/i.exec(temp).slice(1)
+    i = 0
+
+    while i < 3
+      hex += temp[i] + temp[i]
+      i++
+  triplets = /^([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})$/i.exec(hex).slice(1)
+  [parseInt(triplets[0], 16), parseInt(triplets[1], 16), parseInt(triplets[2], 16)]
 
 @RGBify = (color) ->
   return 'rgb(' + color.join(', ') + ')'

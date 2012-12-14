@@ -166,5 +166,14 @@ $bg-dash-size: 17px;
 
 
 
+.display {
+  .action-button, .app-title { display: none; }
+
+  .app-main {
+    top: 0;
+    padding-top: 16px;
+  }
+}
+
 
 

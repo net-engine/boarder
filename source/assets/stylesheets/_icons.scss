@@ -1,17 +1,17 @@
 @font-face {
-	font-family: 'entypo';
-	src:url('/assets/fonts/entypo.eot');
-	src:url('/assets/fonts/entypo.eot?#iefix') format('embedded-opentype'),
-		url('/assets/fonts/entypo.svg#entypo') format('svg'),
-		url('/assets/fonts/entypo.woff') format('woff'),
-		url('/assets/fonts/entypo.ttf') format('truetype');
+	font-family: 'icomoon';
+	src:url('/assets/fonts/icomoon.eot');
+	src:url('/assets/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/icomoon.svg#icomoon') format('svg'),
+		url('/assets/fonts/icomoon.woff') format('woff'),
+		url('/assets/fonts/icomoon.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-	font-family: 'entypo';
+	font-family: 'icomoon';
 	content: attr(data-icon);
 	speak: none;
 	font-weight: normal;
@@ -21,7 +21,7 @@
 
 /* Use the following CSS code if you want to have a class per icon */
 [class^="icon-"]:before, [class*=" icon-"]:before {
-	font-family: 'entypo';
+	font-family: 'icomoon';
 	font-style: normal;
 	speak: none;
 	font-weight: normal;
@@ -29,11 +29,14 @@
 	-webkit-font-smoothing: antialiased;
 }
 
-.icon-plus:before  				{ content: "\002b"; }
-.icon-minus:before 				{ content: "\002d"; }
-.icon-close:before 				{ content: "\00d7"; }
-.icon-upload:before 			{ content: "\2191"; }
-.icon-save:before 				{ content: "\2193"; }
-.icon-resize:before 			{ content: "\2194"; }
-.icon-pictures:before 		{ content: "\25a8"; }
-
+.icon-plus:before  					{ content: "\002b"; }
+.icon-minus:before 					{ content: "\002d"; }
+.icon-close:before 					{ content: "\00d7"; }
+.icon-upload:before 				{ content: "\2191"; }
+.icon-save:before 					{ content: "\2193"; }
+.icon-resize:before 				{ content: "\2194"; }
+.icon-pictures:before 			{ content: "\25a8"; }
+.icon-grid:before 					{ content: "\25a9"; }
+.icon-droplet:before 				{ content: "\2602"; }
+.icon-eye:before 						{ content: "\2603"; }
+.icon-paint-roller:before 	{ content: "\2b24"; }
