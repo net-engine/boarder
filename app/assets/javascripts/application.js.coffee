@@ -59,12 +59,14 @@ refresh = ->
 
       if count is 0
         initGridster()
+        
 
         $(window).load ->
           # $('body').removeClass 'loading'
 
           # updateColor averageColours(getColors())
           # This is currently broken due to cross origin issues when serving the images from imgur
+
   else
     $('#main').addClass('empty')
     initGridster()
@@ -86,7 +88,27 @@ refresh = ->
         ), 500
 
   ).data("gridster")
+  maintainAspect('.gridster ul li img', true)
   # initResizable()
+
+maintainAspect = (elem, centre) ->
+  $(elem).each (i, e) ->
+    img = $(e)
+    (img).load( -> 
+      ratio = img.width() / img.height()
+      if img.width() < img.parent().width()
+        img.addClass 'tall'
+        nh = parseInt img.width()/ratio
+        img.css 'max-height', nh
+        if centre
+          img.css 'margin-top', (img.parent().height() - nh)/2
+      else
+        img.addClass 'wide'
+        nw = parseInt img.height()*ratio
+        img.css 'max-width', nw
+        if centre 
+          img.css 'margin-left', (img.parent().width() - nw)/2
+    )
 
 upload = (file) ->
   APIKey = "4a49972bdbbcb16572a430007f806211"
