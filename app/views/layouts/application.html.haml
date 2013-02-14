@@ -16,9 +16,7 @@
       .boards-list#boards
 
       .app-actions.actions
-        %input{type: 'color'}
-        = link_to 'Upload Board', '#', class: 'button button-upload action-button icon-upload', id: 'upload-button'
-        = link_to 'Save Board', '#', class: 'button button-save action-button icon-save', id: 'save-button'
+        = link_to 'Color Picker', '#', class: 'button button-color action-button icon-plus', id: 'color-picker-button'
         = link_to 'Add item', '#', class: 'button button-add action-button icon-plus', id: 'add-button'
         %input#file-upload{type: "file"}
 

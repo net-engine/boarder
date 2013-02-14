@@ -3,6 +3,7 @@
 #= require libs/jquery-ui.min
 #= require libs/quantize
 #= require libs/color-thief
+#= require libs/colorpicker.min
 
 #= require colors
 #= require_tree './templates'
@@ -210,5 +211,5 @@ $ ->
     if inputSizeY.val().length isnt 0 then sizeY = parseInt(inputSizeY.val()) else sizeY = parseInt(inputSizeY.closest("li").attr("data-sizey"))
     gridster.resize_widget($(this).closest('li'), sizeX, sizeY)
     saveSettings()
-
+  
 

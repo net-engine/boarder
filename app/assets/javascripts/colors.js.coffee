@@ -50,19 +50,19 @@
   triplets = /^([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})$/i.exec(hex).slice(1)
   [parseInt(triplets[0], 16), parseInt(triplets[1], 16), parseInt(triplets[2], 16)]
 
+
 @RGBify = (color) ->
-  return 'rgb(' + color.join(', ') + ')'
+  c = for n, chan of color
+    chan
+  return 'rgb(' + c.join(', ') + ')'
 
 @RGBAify = (color, opacity) ->
-  return 'rgba(' + color.join(', ') + ', ' + parseFloat(number) + ')'
+  return 'rgba(' + c.join(', ') + ', ' + parseFloat(number) + ')'
 
 @inverseColor = (color) ->
-  inverseColor = []
-
-  $.each color, (i, num) ->
-    inverseColor.push 255 - num
-
-  return inverseColor
+  c = for n, chan of color
+      255 - chan
+  return 'rgb(' + c.join(', ') + ')'
 
 @getColors = ->
   colors = []
@@ -89,9 +89,16 @@
   return averageColor
 
 @updateColor = (color) ->
+  console.log(RGBify(color))
   $('body').css
     'background': RGBify(color)
-    'color': RGBify(inverseColor(color))
+    'color': inverseColor(color)
   $('a').css
-    'color': RGBify(inverseColor(color))
+    'color': inverseColor(color)
 
+$ ->
+  ColorPicker.fixIndicators(document.getElementById('slider-indicator'),document.getElementById('picker-indicator'))
+  ColorPicker(document.getElementById('slider'), document.getElementById('picker'), (hex, hsv, rgb, pickerCoordinate, sliderCoordinate) ->
+    ColorPicker.positionIndicators(document.getElementById('slider-indicator'), document.getElementById('picker-indicator'), sliderCoordinate, pickerCoordinate)
+    updateColor(rgb)
+  )
