@@ -14,6 +14,7 @@ initResizable = ->
   $('.gridster li').resizable
     grid: ($('.gridster').width() / 6) - 20
 
+# Add hide / show ani for images in here?
 refresh = ->
   setTimeout (->
     $('.gridster').remove()

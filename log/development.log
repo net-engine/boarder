@@ -17677,3 +17677,109 @@ Served asset /spinner.gif - 200 OK (0ms)
 
 Started GET "/assets/icomoon.svg" for 127.0.0.1 at 2013-02-13 17:31:21 +1000
 Served asset /icomoon.svg - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-14 08:12:29 +1000
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.haml within layouts/application (1.4ms)
+Compiled application.css  (913ms)  (pid 84937)
+Compiled application.js  (192ms)  (pid 84937)
+  Rendered shared/_footer.html.haml (0.8ms)
+  Rendered shared/_dialogs.html.haml (2.8ms)
+Completed 200 OK in 1165ms (Views: 1164.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/libs/jquery.min.js?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /libs/jquery.min.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/libs/jquery.gridster.min.js?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /libs/jquery.gridster.min.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/jquery-ui.min.js?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /libs/jquery-ui.min.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/libs/quantize.js?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /libs/quantize.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/libs/color-thief.js?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /libs/color-thief.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/colors.js?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /colors.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/templates/block.js?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /templates/block.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-14 08:12:30 +1000
+Served asset /application.js - 200 OK (5ms)
+
+
+Started GET "/assets/spinner.gif" for 127.0.0.1 at 2013-02-14 08:12:31 +1000
+Served asset /spinner.gif - 304 Not Modified (2ms)
+
+
+Started GET "/assets/icomoon.svg" for 127.0.0.1 at 2013-02-14 08:12:31 +1000
+Served asset /icomoon.svg - 304 Not Modified (1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Processing by DashboardController#index as HTML
+  Rendered dashboard/index.html.haml within layouts/application (0.2ms)
+  Rendered shared/_footer.html.haml (0.1ms)
+  Rendered shared/_dialogs.html.haml (0.3ms)
+Completed 200 OK in 14ms (Views: 13.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery.min.js?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /libs/jquery.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery.gridster.min.js?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /libs/jquery.gridster.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/jquery-ui.min.js?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /libs/jquery-ui.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/quantize.js?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /libs/quantize.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/libs/color-thief.js?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /libs/color-thief.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/colors.js?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /colors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/templates/block.js?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /templates/block.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/spinner.gif" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /spinner.gif - 304 Not Modified (0ms)
+
+
+Started GET "/assets/icomoon.svg" for 127.0.0.1 at 2013-02-14 12:57:24 +1000
+Served asset /icomoon.svg - 304 Not Modified (0ms)
