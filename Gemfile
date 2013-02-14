@@ -9,7 +9,7 @@ gem 'jquery-ui-rails'
 gem 'mongoid'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.12'
 
 group :assets do
   gem 'sass-rails'
