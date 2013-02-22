@@ -54,15 +54,25 @@
 @RGBify = (color) ->
   c = for n, chan of color
     chan
-  return 'rgb(' + c.join(', ') + ')'
+  return 'rgba(' + c.join(', ') + ')'
 
+# Spectrum outputs rgba when asked for rgb
+###
 @RGBAify = (color, opacity) ->
+  c = for n, chan of color
+    chan
   return 'rgba(' + c.join(', ') + ', ' + parseFloat(number) + ')'
+###
 
 @inverseColor = (color) ->
-  c = for n, chan of color
-      255 - chan
-  return 'rgb(' + c.join(', ') + ')'
+  rgb = 
+    red: color.r,
+    green: color.g,
+    blue: color.b
+
+  c = for n, chan of rgb
+    255 - chan
+  return 'rgba(' + c.join(', ') + ', ' + color.a + ')'
 
 @getColors = ->
   colors = []
@@ -89,16 +99,21 @@
   return averageColor
 
 @updateColor = (color) ->
-  console.log(RGBify(color))
+  localStorage.setItem('bg', RGBify(color))
   $('body').css
     'background': RGBify(color)
     'color': inverseColor(color)
   $('a').css
     'color': inverseColor(color)
-
+  $('.sp-replacer').css
+    'background': inverseColor(color)
+    'color': RGBify(color)
 $ ->
-  ColorPicker.fixIndicators(document.getElementById('slider-indicator'),document.getElementById('picker-indicator'))
-  ColorPicker(document.getElementById('slider'), document.getElementById('picker'), (hex, hsv, rgb, pickerCoordinate, sliderCoordinate) ->
-    ColorPicker.positionIndicators(document.getElementById('slider-indicator'), document.getElementById('picker-indicator'), sliderCoordinate, pickerCoordinate)
-    updateColor(rgb)
+  $('#picker').attr('value', localStorage.bg)
+  $('#picker').spectrum(
+    localStorageKey: 'bg'
+  )
+  updateColor($('#picker').spectrum('get').toRgb())
+  $('.sp-button-container button').click( ->
+    updateColor($('#picker').spectrum('get').toRgb())
   )

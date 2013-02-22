@@ -1,7 +1,8 @@
 @import
   'compass',
   'compass/reset',
-  'libs/gridster';
+  'libs/gridster',
+  'libs/spectrum';
 
 @import
   'settings',
@@ -14,5 +15,4 @@
 @import
   'modules/button',
   'modules/overlay',
-  'modules/dialog',
-  'modules/color-picker';
+  'modules/dialog';

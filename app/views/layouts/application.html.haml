@@ -16,7 +16,7 @@
       .boards-list#boards
 
       .app-actions.actions
-        = link_to 'Color Picker', '#', class: 'button button-color action-button icon-plus', id: 'color-picker-button'
+        %input#picker{type: "text"}
         = link_to 'Add item', '#', class: 'button button-add action-button icon-plus', id: 'add-button'
         %input#file-upload{type: "file"}
 
