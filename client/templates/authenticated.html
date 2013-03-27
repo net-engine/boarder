@@ -1,0 +1,18 @@
+<template name='authenticated'>
+  <section>
+    <div class='container'>
+      <a href='#new' id='new-board-button' class='button'></a>
+      {{> boards}}
+    </div>
+  </section>
+
+  <div class='dialog'>
+    <form id='new-board'>
+      <input id='name' type='text'>
+      <textarea id='content'></textarea>
+      <a id='new-board-submit' href='#new' class='button'> New Board</a>
+    </form>  
+  </div>
+  
+
+</template>
