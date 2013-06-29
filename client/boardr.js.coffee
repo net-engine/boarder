@@ -19,6 +19,8 @@ Template.boards.events
       content: $('#new-board-content').val()
 
     $('#new-board-dialog').hide()
+    $('#new-board-title').val('')
+    $('#new-board-content').val('')
 
   'click #edit-board-submit': (e, tmpl) ->
     e.preventDefault()
@@ -47,7 +49,6 @@ Template.board.events
     window.editing_id = @_id
 
     $('#edit-board-dialog').show()
-
 
 
 Template.boards.rendered = ->
