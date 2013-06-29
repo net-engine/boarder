@@ -3,7 +3,7 @@
 @import url('http://fonts.googleapis.com/css?family=Montserrat:400,700');
 
 html {
-  background-image: linear-gradient(whitesmoke, white);
+  background: white;
   min-height: 100%;
 }
 
@@ -14,11 +14,35 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+
+[class*='icon-']:before {
+  text-indent: 0;
+  position: absolute;
+  top: 50%; left: 50%;
+  margin: -.5em;
+  width: 1em; height: 1em;
+  text-align: center;
+}
+
+.icon-only {
+  display: block;
+  position: relative;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+}
+
+.icon-delete:before,
+.icon-close:before { content: '\00D7' }
+
+
 .app-container {
   padding: 2em;
 
   @media screen and (max-width: 600px) {
-    padding: 0 1em 2em;
+    padding: 1em 1em 2em;
   }
 }
 
@@ -32,15 +56,24 @@ body {
   margin: 1em auto;
   padding: 0 1em;
   height: 2em;
-  line-height: 2em;
+  font: normal 18px/2em 'Montserrat';
   background: mediumturquoise;
   text-shadow: 0 1px 1px darkturquoise;
   white-space: nowrap;
+  text-decoration: none;
   text-overflow: ellipsis;
   overflow: hidden;
   border-bottom: 1px solid darkturquoise;
   color: white;
+  border: 0;
+  -webkit-font-smoothing: antialiased;
   border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    background: darkturquoise;
+    cursor: pointer;
+  }
 }
 
 .logo {
@@ -51,7 +84,15 @@ body {
   letter-spacing: .5em;
 }
 
-.login-buttons-dropdown-align-right { float: right; }
+a {
+  color: darkturquoise;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+    color: black;
+  }
+}
 
 .label {
   display: block;
@@ -69,12 +110,22 @@ label {
   background: white;
   box-sizing: border-box;
   border: 1px solid #ddd;
-  border-width: 0 0 1px 0;
-  font: normal 18px/1.5em 'Montserrat';  
+  border-width: 0 0 1px;
+  text-align: center;
+  font: normal 18px/1.5em 'Montserrat';
+
+  &:focus {
+    outline: 0;
+    border-color: darkturquoise;
+  }
 }
 
 input[type='text'], input[type='email'], input[type='password'], textarea {
   @extend .input;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .public {
@@ -91,6 +142,8 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   .login-form-sign-in, .accounts-dialog {
     max-width: 400px;
     margin: auto;
+    border: 0;
+    position: static;
   }
 
   .additional-link-container {
@@ -105,6 +158,11 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   .additional-link {
     padding: 0 .75em;
     font-size: 90%;
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+    }
   }
 
   .login-button {
@@ -116,16 +174,20 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
 
 // Boards
 
-.boards { clear: both; }
+.boards {
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
 
 .board {
   float: left;
   position: relative;
   list-style: none;
   border: 1px solid darkkhaki;
-  border-bottom: 0;
   background: white;
   font-size: 1em;
+  line-height: 2em;
   padding: 0 1em;
   margin: 0 1em 1em 0;
   min-height: 8em;
@@ -136,22 +198,52 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   background-image: linear-gradient(top, rgba(0,0,0,.15) 0, rgba(0,0,0,.15) 1px, rgba(0,0,0,0) 1px, rgba(0,0,0,0));
   background-position: center -1px;
   background-size: 2em;
+  box-sizing: border-box;
+}
+
+.new-board-button {
+  background: transparent;
+  border: 2px dashed;
+  position: relative;
+  opacity: .5;
+
+  &:before {
+    content: 'New board';
+    position: absolute;
+    top: 50%;
+    line-height: 2em;
+    margin-top: -1em;
+    left: 1em;
+    right: 1em;
+    text-align: center;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .board-header {
-  margin-bottom: 1.65em;
 
   h1 {
     margin: 0;
     line-height: 2em;
   }
+}
 
-  .icon-delete {
-    position: absolute;
-    top: -.5em; right: -.5em;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 50%;
+.icon-delete, .icon-close {
+  color: white;
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  background: darkslategray;
+  border-radius: 50%;
+  font-size: 1.15em;
+  line-height: 1.1em;
+
+  &:hover {
+    color: white
+    background: dimgrey;
   }
 }
 
@@ -160,33 +252,37 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   margin-bottom: 1.35em;
 }
 
-
-[class*='icon-'] {
+.login-button {
   display: block;
-  position: relative;
-  text-indent: -9999px;
-  overflow: hidden;
-  width: 1em;
-  height: 1em;
-  line-height: 1em;
-
-  &:before {
-    text-indent: 0;
-    position: absolute;
-    top: 50%; left: 50%;
-    margin: -.5em;
-    width: 1em; height: 1em;
-    text-align: center;
-  }
-
+  padding: 0 .5em;
 }
 
-.icon-delete:before { content: '\00D7' }
+.login-buttons-dropdown-align-right { float: right; }
 
+.login-link-and-dropdown-list {
+  position: relative;
+}
 
+.dialog, .accounts-dialog {
+  background: white;
+  border: 1px solid #ddd;
+}
 
+.accounts-dialog {
+  position: absolute;
+  top: 1.5em;
+  right: 0;
+}
 
 .dialog {
-  clear: both;
+  display: none;
+  position: fixed;
+  top: 4em;
+  left: 50%;
   width: 400px;
+  margin-left: -200px;
+  z-index: 10;
+  padding: 1em;
+  box-shadow: 0 0 0 99999px rgba(white, .75);
 }
+

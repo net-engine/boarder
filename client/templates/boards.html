@@ -3,5 +3,28 @@
     {{#each boards}}
       {{> board}}
     {{/each}}
+    <a href='#new' id='new-board-button' class='board new-board-button'></a>
   </ul>
+
+  <div class='dialog' id='new-board-dialog'>
+    <h1>New board</h1>
+    <form id='new-board'>
+      <input name="board[title]" id='new-board-title' type='text' placeholder="Title">
+      <textarea name="board[content]" id='new-board-content' placeholder="Content"></textarea>
+      <button id='new-board-submit' type='submit' class='button'>Create</button>
+
+      <a href='#close' class='icon-close icon-only close-dialog'>Close</a>
+    </form>  
+  </div>
+
+  <div class='dialog' id='edit-board-dialog'>
+    <h1>Edit board</h1>
+    <form id='edit-board'>
+      <input name="board[title]" id='edit-board-title' type='text' placeholder="Title">
+      <textarea name="board[content]" id='edit-board-content' placeholder="Content"></textarea>
+      <button id='edit-board-submit' type='submit' class='button'>Update</button>
+
+      <a href='#close' class='icon-close icon-only close-dialog'>Close</a>
+    </form>  
+  </div>
 </template>
