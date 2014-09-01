@@ -96,9 +96,9 @@
   $('a').css
     'color': inverseColor(color)
 
-$ ->
-  ColorPicker.fixIndicators(document.getElementById('slider-indicator'),document.getElementById('picker-indicator'))
-  ColorPicker(document.getElementById('slider'), document.getElementById('picker'), (hex, hsv, rgb, pickerCoordinate, sliderCoordinate) ->
-    ColorPicker.positionIndicators(document.getElementById('slider-indicator'), document.getElementById('picker-indicator'), sliderCoordinate, pickerCoordinate)
-    updateColor(rgb)
-  )
+# $ ->
+#   ColorPicker.fixIndicators(document.getElementById('slider-indicator'),document.getElementById('picker-indicator'))
+#   ColorPicker(document.getElementById('slider'), document.getElementById('picker'), (hex, hsv, rgb, pickerCoordinate, sliderCoordinate) ->
+#     ColorPicker.positionIndicators(document.getElementById('slider-indicator'), document.getElementById('picker-indicator'), sliderCoordinate, pickerCoordinate)
+#     updateColor(rgb)
+#   )

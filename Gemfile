@@ -19,7 +19,7 @@ group :assets do
 end
 
 group :development, :qa, :staging do
-  gem 'debugger'
+  # gem 'debugger'
   gem 'sextant'
   gem 'thin'
 end
